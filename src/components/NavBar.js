@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
+import {linesInfo} from '../data/linesInfo';
 
 
-const navbar = (props) => {
+const navbar = () => {
+
+  const lineInfo = linesInfo;
 
   const searchClickHandler = (e) =>{
     e.preventDefault();
@@ -38,8 +41,8 @@ const navbar = (props) => {
                   {
                     localStorage.getItem('token') === 'guest' ?
                     <>
-                      <Link  className="btn my-auto ms-2 px-0 py-0" about="logIn"><h6 className="mb-0" style={{fontSize:"10px"}}>ورود</h6></Link>
-                      <Link  className="btn btn-secondary ms-1 px-2 py-2" about="register"><h6 className="mb-0" style={{fontSize:"10px"}}>ثبت نام</h6></Link>
+                      <Link to= "/logIn" className="btn my-auto ms-2 px-0 py-0" about="logIn"><h6 className="mb-0" style={{fontSize:"10px"}}>ورود</h6></Link>
+                      <Link to="/register" className="btn btn-secondary ms-1 px-2 py-2" about="register"><h6 className="mb-0" style={{fontSize:"10px"}}>ثبت نام</h6></Link>
                     </>
                     : 
                     <button type="button" className="btn btn-secondary  ms-1" about="حساب کاربری"><i className="fa fa-user fa-xs" ></i></button>
@@ -58,22 +61,22 @@ const navbar = (props) => {
                     لاین های تخصصی
                   </a>
                   <ul className="dropdown-menu dropdown-menu-left dropdown-menu-left">
-                    <li><a className="dropdown-item text-center" href="#">عروس</a></li>
+                    <li><a className="dropdown-item text-center" href={`/lines/:${lineInfo[0].id}`}>{lineInfo[0].l}</a></li>
                     <li><hr className="dropdown-divider"/></li>
-                    <li><a className="dropdown-item text-center" href="#">رنگ و لایت</a></li>
-                    <li><a className="dropdown-item text-center" href="#">کراتینه</a></li>
+                    <li><a className="dropdown-item text-center" href={`/lines/:${lineInfo[1].id}`}>{lineInfo[1].l}</a></li>
+                    <li><a className="dropdown-item text-center" href={`/lines/:${lineInfo[2].id}`}>{lineInfo[2].l}</a></li>
                     <li><hr className="dropdown-divider"/></li>
-                    <li><a className="dropdown-item text-center" href="#">کوتاهی و اصلاح ابرو</a></li>
-                    <li><a className="dropdown-item text-center" href="#">بافت</a></li>
+                    <li><a className="dropdown-item text-center" href={`/lines/:${lineInfo[3].id}`}>{lineInfo[3].l}</a></li>
+                    <li><a className="dropdown-item text-center" href={`/lines/:${lineInfo[4].id}`}>{lineInfo[4].l}</a></li>
                     <li><hr className="dropdown-divider"/></li>
-                    <li><a className="dropdown-item text-center" href="#">مانیکور</a></li>
-                    <li><a className="dropdown-item text-center" href="#">پدیکور و کف‌سابی</a></li>
+                    <li><a className="dropdown-item text-center" href={`/lines/:${lineInfo[5].id}`}>{lineInfo[5].l}</a></li>
+                    <li><a className="dropdown-item text-center" href={`/lines/:${lineInfo[6].id}`}>{lineInfo[6].l}</a></li>
                     <li><hr className="dropdown-divider"/></li>
-                    <li><a className="dropdown-item text-center" href="#">آرایش دائم</a></li>
-                    <li><a className="dropdown-item text-center" href="#">هایفوتراپی</a></li>
-                    <li><a className="dropdown-item text-center" href="#">فیشیال و پاکسازی</a></li>
-                    <li><a className="dropdown-item text-center" href="#">تزریق بوتاکس</a></li>
-                    <li><a className="dropdown-item text-center" href="#">لیزر موهای زائد</a></li>
+                    <li><a className="dropdown-item text-center" href={`/lines/:${lineInfo[7].id}`}>{lineInfo[7].l}</a></li>
+                    <li><a className="dropdown-item text-center" href={`/lines/:${lineInfo[8].id}`}>{lineInfo[8].l}</a></li>
+                    <li><a className="dropdown-item text-center" href={`/lines/:${lineInfo[9].id}`}>{lineInfo[9].l}</a></li>
+                    <li><a className="dropdown-item text-center" href={`/lines/:${lineInfo[10].id}`}>{lineInfo[10].l}</a></li>
+                    <li><a className="dropdown-item text-center" href={`/lines/:${lineInfo[11].id}`}>{lineInfo[11].l}</a></li>
                   </ul>
                 </li>
                 <li className="nav-item dropdown">

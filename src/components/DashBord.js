@@ -4,26 +4,15 @@ import Navbar from "./NavBar";
 import Footer from "./Footer";
 import Modal from "./Modal";
 import Carousel from "./Carousel";
+
+import LinesSwiper from './LinesSwiper';
 import { mobileModeData, pcModeData } from "../data/staticPictures";
 
 
 
 const DashBord = (props) => {
 
-    const Lines = [
-      'عروس',
-      'رنگ و لایت',
-      'کراتینه',
-      'کوتاهی و اصلاح ابرو',
-      'بافت',
-      'مانیکور',
-      'پدیکور و کف‌سابی',
-      'آرایش دائم',
-      'هایفوتراپی',
-      'فیشیال و پاکسازی',
-      'تزریق بوتاکس',
-      'لیزر موهای زائد'
-    ]
+    
 
     const introP1 = <p>
                 به وبسايت آكادمي تخصصي فدرا، یکی از بهترین سالن های زیبایی استان یزد و بهترین سالن زیبایی اردکان خوش آمديد.
@@ -37,7 +26,7 @@ const DashBord = (props) => {
               ایشان طی چند دوره به عنوان مدرس در كلاس‌های بازآموزی مديران و مربيان يزد، به اشتراک داشته‌هايشان پرداخته و در تقويت مهارت آن‌ها نقش بسزايی ايفا كرده‌اند.
               <br />
               <br />
-              در ادامه لاین‌های تخصصی سالن زیبایی فدرا قرار داده شده‌اند که می‌توانید آن‌ها را مشاهده کرده و نمونه‌های هر یک را بررسی کنید.
+              در ادامه می‌توانید با انتخاب هر یک از لاین‌های تخصصی سالن زیبایی فدرا، آن‌ لاین را مشاهده کرده و نمونه‌های موجود را بررسی کنید.
               </p>
 
     return(
@@ -73,17 +62,17 @@ const DashBord = (props) => {
         
         {/* devider */}
         <h6 className='d-flex justify-content-center mt-5'>درباره آکادمی تخصصی فدرا</h6>
-        <div class="wrapper">
-          <div class="divider div-transparent div-arrow-down"></div>
+        <div className="wrapper">
+          <div className="divider div-transparent div-arrow-down"></div>
         </div>
 
         {/* mobile mode */}
         <div className="container row mx-auto d-none d-xl-inline-flex d-xxl-inline-flex">
-            <div class="col-7 ml-auto  align-items-center mt-4 mt-md-0">
+            <div className="col-7 ml-auto  align-items-center mt-4 mt-md-0">
               {introP1}
               {introP2}
             </div>
-          <video loop="true" autoplay="autoplay" controls="controls" id="vid" muted class="col-5" height={"auto"} width={"100%"}>
+          <video loop={true} autoPlay="autoplay" controls="controls" id="vid" muted className="col-5" height={"auto"} width={"100%"}>
             <source src="../../media/videos/fedraIntroductionVideo.mp4" type="video/mp4" />
           </video>
           {/* for instant playback */}
@@ -94,37 +83,28 @@ const DashBord = (props) => {
 
         {/* pc mode */}
         <div className="container px-auto mx-auto d-xl-none d-xxl-none">
-          <div class=" d-flex align-items-center mt-4 mt-md-0">
+          <div className=" d-flex align-items-center mt-4 mt-md-0">
             {introP1}
           </div>
-          <video loop="true" autoplay="autoplay" controls="controls" id="vid" muted height={"auto"} width={"100%"}>
+          <video loop={true} autoPlay="autoplay" controls="controls" id="vid" muted height={"auto"} width={"100%"}>
             <source src="../../media/videos/fedraIntroductionVideo.mp4" type="video/mp4" />
           </video>
           {/* for instant playback */}
           <script>
             document.getElementById('vid').play();
           </script>
-          <div class=" d-flex align-items-center mt-4 mt-md-0">
+          <div className=" d-flex align-items-center mt-4 mt-md-0">
             {introP2}
           </div>      
         </div>
 
-        {/* devider */}
-        <h6 className='d-flex justify-content-center mt-5'>لاین های تخصصی</h6>
-        <div class="wrapper">
-          <div class="divider div-transparent div-arrow-down"></div>
-        </div>
-
-        <div className='container lines'>
-          <div className='row p-1 m-1 justify-content-center'>
-            {Lines.map((l , i) => <div className='btn btn-outline-secondary d-flex justify-content-center align-items-center p-1 col-4 border border-3 rounded-3 m-1 text-center'>{l}</div>)}
-          </div>
-        </div>
+        {/* salon lines */}
+        <LinesSwiper />
 
         {/* devider */}
         <h6 className='d-flex justify-content-center mt-5'>پر طرفدار ترین‌ها</h6>
-        <div class="wrapper">
-          <div class="divider div-transparent div-arrow-down"></div>
+        <div className="wrapper">
+          <div className="divider div-transparent div-arrow-down"></div>
         </div>
         
 

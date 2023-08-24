@@ -57,7 +57,7 @@ function Register() {
             // const token = respose.data.token;
             const token = 'sina1111'
             localStorage.setItem('token',token);
-            navigate('/dashbord', { replace: true });
+            navigate('/dashbord');
 
         }catch(error){
             //setErrors('نام کاربری توسط کاربر دیگری استفاده شده است')

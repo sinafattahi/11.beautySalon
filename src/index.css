@@ -32,14 +32,14 @@
 }
 
 
-.lines>div>div {
+.lines {
 	width: 200px;
 	height: 200px;
 }
 @media (max-width: 767px) {
-	.lines>div>div {
-		width: 90px;
-		height: 90px;
+	.lines {
+		width: 100px;
+		height: 100px;
 	}
   }
 
