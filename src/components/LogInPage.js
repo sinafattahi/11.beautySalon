@@ -42,11 +42,11 @@ function LogInPage (props) {
         const result = await validate();
 
         try{
-            const respose = await axios.post("link/", result);
+            //const respose = await axios.post("link/", result);
             // const token = respose.data.token;
             const token = 'sina1111'
             localStorage.setItem('token',token);
-            navigate('/dashbord', { replace: true });
+            navigate('/dashbord');
 
         }catch(error){
             //setErrors('نام کاربری یا رمز ورود اشتباه است')

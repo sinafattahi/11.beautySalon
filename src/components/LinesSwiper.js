@@ -28,8 +28,6 @@ const LinesSwiper = (props) => {
           spaceBetween={50}
           slidesPerView={numSlide}
           navigation
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log('slide change')}
         >
           <div className='container lines'>
             <div className='row p-1 m-1 justify-content-center'>
@@ -39,8 +37,7 @@ const LinesSwiper = (props) => {
             </div>
           </div>
       </Swiper>
-      </div>
-        
+      </div>  
     )
 }
 

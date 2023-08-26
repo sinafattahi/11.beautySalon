@@ -4,12 +4,14 @@ import LogInPage from "./components/LogInPage";
 import DashBord from "./components/DashBord";
 import Register from "./components/Register";
 import Lines from "./components/Lines";
+import UserAccount from "./components/UserAccount";
 
 function App(props) {
   return (
     <div className="App">
       <Routes>
         <Route path="/dashbord" Component={DashBord} />
+        <Route path="/userAccount" Component={UserAccount} />
         <Route path="/register" Component={Register} />
         <Route path="/logIn" Component={LogInPage} />
         <Route path="/lines/:id" element={<Lines {...props}/>} />

@@ -5,12 +5,7 @@ import {linesInfo} from '../data/linesInfo';
 const navbar = () => {
 
   const lineInfo = linesInfo;
-
-  const searchClickHandler = (e) =>{
-    e.preventDefault();
-  }
-
-
+  
     return(
       <div className="fixed-top">
         <nav className="navbar navbar-expand-lg navbar-light bg-light w-100" style={{width: "100%"}}> 
@@ -45,7 +40,7 @@ const navbar = () => {
                       <Link to="/register" className="btn btn-secondary ms-1 px-2 py-2" about="register"><h6 className="mb-0" style={{fontSize:"10px"}}>ثبت نام</h6></Link>
                     </>
                     : 
-                    <button type="button" className="btn btn-secondary  ms-1" about="حساب کاربری"><i className="fa fa-user fa-xs" ></i></button>
+                    <Link to="/userAccount"  title="حساب کاربری" type="button" className="btn btn-secondary ms-2 py-1" about="حساب کاربری"><i className="fa fa-user fa-xs" ></i></Link>
                   }
                 </div>
               </div>      
