@@ -34,7 +34,7 @@ const navbar = () => {
                   <button type="button" className="btn btn-secondary ms-2 py-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i className="fa fa-search fa-xs py-0" ></i></button>
                   
                   {
-                    localStorage.getItem('token') === 'guest' ?
+                    localStorage.getItem('userType') === 'guestUser' ?
                     <>
                       <Link to= "/logIn" className="btn my-auto ms-2 px-0 py-0" about="logIn"><h6 className="mb-0" style={{fontSize:"10px"}}>ورود</h6></Link>
                       <Link to="/register" className="btn btn-secondary ms-1 px-2 py-2" about="register"><h6 className="mb-0" style={{fontSize:"10px"}}>ثبت نام</h6></Link>

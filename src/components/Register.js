@@ -157,7 +157,7 @@ function Register() {
 
                         <br />
 
-                        <Link to='/googleLogIn' className="text-decoration-none" style={{color:"#5C636A"}}>ثبت‌نام با اکانت  <span style={{color:"red"}}>گوگل</span></Link>
+                        {/* <Link onClick={() => login()} className="text-decoration-none" style={{color:"#5C636A"}}>ورود با اکانت  <span style={{color:"red"}}>گوگل</span></Link> */}
 
                         <br />
                         <br />

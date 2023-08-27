@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import {useLocation} from 'react-router-dom';
 import Navbar from "./NavBar";
 import Footer from "./Footer";
 import Modal from "./Modal";
@@ -10,21 +11,27 @@ import { mobileModeData, pcModeData } from "../data/staticPictures";
 
 
 
-const DashBord = (props) => {
+const DashBord = () => {
 
+  const location = useLocation()
     
   const [data, setData] = useState([])
-    useEffect(() => {
-      axios.get('https://jsonplaceholder.typicode.com/posts')
-      .then(
-        (result) => {
-          
-          setData({data: result.data})
 
-      }).catch((error)=>{
-        console.log(error)
-      })     
-    },[])
+
+  useEffect(() => {
+    axios.get('https://jsonplaceholder.typicode.com/posts')
+    .then(
+      (result) => {
+
+        setData({data: result.data})
+
+        console.log("kk")
+        console.log(location.state)
+
+    }).catch((error)=>{
+      console.log(error)
+    })     
+  },[])
 
     const introP1 = <p>
                 به وبسايت آكادمي تخصصي فدرا، یکی از بهترین سالن های زیبایی استان یزد و بهترین سالن زیبایی اردکان خوش آمديد.
