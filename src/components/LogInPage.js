@@ -122,7 +122,7 @@ function LogInPage (props) {
                 </div>
                 <div className="col my-auto mx-auto">
                     <form>
-                        <img className="w-50 align-self-center d-block d-sm-none d-md-block d-lg-none mx-auto" src="./../media/img/FEDRA-G-b.png"/>
+                        <img className="w-50 align-self-center d-block d-sm-block d-md-block d-lg-none mx-auto" src="./../media/img/FEDRA-G-b.png"/>
                         <div>
                             <label htmlFor="exampleInputEmail1" className="form-label">
                                 نام کاربری

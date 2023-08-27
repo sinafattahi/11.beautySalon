@@ -8,6 +8,11 @@ const GoogleAuth = () => {
     const [ user, setUser ] = useState([]);
     const navigate = useNavigate()
 
+    const googleLogin = (e) => {
+        e.preventDefault();
+        login()
+    }
+
     const login = useGoogleLogin({
         onSuccess: (codeResponse) => setUser(codeResponse),
         onError: (error) => console.log('Login Failed:', error)
@@ -54,24 +59,20 @@ const GoogleAuth = () => {
                     </div>
                 </div>
                 <div className="col my-3 mx-auto">
-                    <form>
-                        <img className="w-50 align-self-center d-block d-sm-none d-md-block d-lg-none mx-auto" src="./../media/img/FEDRA-G-b.png"/>
-                       
+                    <form className="d-flex flex-column align-self-center my-auto">
 
-                        {/* <div className="d-grid gap-2">
-                            <button onClick={userClickHandler} type="submit" className="btn btn-secondary">ورود</button> 
-                        </div> */}
-
-                        <br />
-                        <button className="btn btn-secondary" onClick={() => login()}>ورود با گوگل 🚀 </button>
-
-                        {/* <Link onClick={() => login()} className="text-decoration-none" style={{color:"#5C636A"}}>ورود با اکانت  <span style={{color:"red"}}>گوگل</span></Link> */}
-
-                        <br />
+                        <img className="w-50 align-self-center d-block d-sm-block d-md-block d-lg-none mx-auto" src="./../media/img/FEDRA-G-b.png"/>
+                        
                         <br />
 
-                        <Link to='/logIn' className="text-decoration-none" style={{color:"#5C636A"}}>ورود با استفاده از نام کاربری</Link>
-                       
+                        <div className="d-none d-sm-none d-md-none d-lg-block" style={{height:"150px"}}/>
+
+                        <button  onClick={googleLogin} className="btn btn-secondary mt-auto" style={{fontSize:"small"}}>ورود با اکانت گوگل 🚀 </button>
+
+                        <br />
+
+                        <Link to='/logIn' className="text-decoration-none" style={{fontSize:"small", color:"#5C636A"}} >ورود با استفاده از نام کاربری</Link>
+          
                     </form>
                 </div>
                 
