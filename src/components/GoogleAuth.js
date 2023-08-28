@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useGoogleLogin } from '@react-oauth/google';
+import { useGoogleLogin, googleLogout } from '@react-oauth/google';
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 
@@ -82,3 +82,10 @@ const GoogleAuth = () => {
 }
 
 export default GoogleAuth;
+
+
+export const GoogleLogOut = () => {
+
+    googleLogout();
+
+}

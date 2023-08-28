@@ -1,15 +1,16 @@
 const Carousel = (props) => {
 
     return(
-        <div>
+        <div dir="ltr">
             <div id={props.id} className={`carousel slide ${props.classNameOut}`} data-bs-ride="carousel">
                 <div className="carousel-indicators">
-                    {/* we need to handle the first one because in has a particular class named active */}
+                    {/* we need to handle the first one because in has a particular className named active */}
                     <button key={'0'} type="button" data-bs-target={`#${props.id}`} data-bs-slide-to="0" aria-label="Slide 1" className="active" ></button>
                     {props.data.slice(1).map( (d, i) => <button key={i} type="button" data-bs-target={`#${props.id}`} data-bs-slide-to={`${i+1}`} aria-label={`Slide ${i+2}`} ></button> )}  
                 </div>
+                
                 <div className="carousel-inner">
-                    {/* we need to handle the first one because in has a particular class named active */}
+                    {/* we need to handle the first one because in has a particular className named active */}
                     <div key='0' className={`active ${props.classNameIn}`} >
                         <img src={props.data[0].src} className=" object-fit-scale d-block w-100 "  />
                         <div className="carousel-caption ">
@@ -28,11 +29,11 @@ const Carousel = (props) => {
                     )
                     }
                 </div>
-                <button className="carousel-control-prev" type="button" data-bs-target={`#${props.id}`} data-bs-slide="next">
+                <button className="carousel-control-prev" type="button" data-bs-target={`#${props.id}`} data-bs-slide="prev">
                     <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span className="visually-hidden">Previous</span>
                 </button>
-                <button className="carousel-control-next" type="button" data-bs-target={`#${props.id}`} data-bs-slide="prev">
+                <button className="carousel-control-next" type="button" data-bs-target={`#${props.id}`} data-bs-slide="next">
                     <span className="carousel-control-next-icon" aria-hidden="true"></span>
                     <span className="visually-hidden">Next</span>
                 </button>

@@ -5,7 +5,8 @@ import DashBord from "./components/DashBord";
 import Register from "./components/Register";
 import Lines from "./components/Lines";
 import UserAccount from "./components/UserAccount";
-import GoogleAuth from "./components/GoogleAuth";
+
+import GoogleAuth from "./components/GoogleAuth"
 
 function App(props) {
   return (

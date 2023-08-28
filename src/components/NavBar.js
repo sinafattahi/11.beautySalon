@@ -1,8 +1,24 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {linesInfo} from '../data/linesInfo';
+import {GoogleLogOut} from './GoogleAuth'
 
 
-const navbar = () => {
+const Navbar = () => {
+
+  const navigate = useNavigate();
+
+  const Exit = () => {
+    if(localStorage.getItem('userType') === 'googleUser'){
+      GoogleLogOut()
+    }
+    else{
+      //LogOut from server
+    }
+
+    localStorage.setItem('token','');
+    localStorage.setItem('userType','guestUser');
+    navigate('/dashbord');
+  }
 
   const lineInfo = linesInfo;
   
@@ -39,8 +55,17 @@ const navbar = () => {
                       <Link to= "/logIn" className="btn my-auto ms-2 px-0 py-0" about="logIn"><h6 className="mb-0" style={{fontSize:"10px"}}>ورود</h6></Link>
                       <Link to="/register" className="btn btn-secondary ms-1 px-2 py-2" about="register"><h6 className="mb-0" style={{fontSize:"10px"}}>ثبت نام</h6></Link>
                     </>
-                    : 
-                    <Link to="/userAccount"  title="حساب کاربری" type="button" className="btn btn-secondary ms-2 py-1" about="حساب کاربری"><i className="fa fa-user fa-xs" ></i></Link>
+                    :
+                    <div className="btn-group" title="حساب کاربری">
+                      <button className="btn btn-secondary ms-2 py-1 rounded" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i className="fa fa-user fa-xs" ></i>
+                      </button>
+                      <ul className="dropdown-menu">
+                        <li><a className="dropdown-item text-center" href="/userAccount">مشاهده حساب کاربری</a></li>
+                        <li><a className="dropdown-item text-center" href="#"></a></li>
+                        <li><a className="dropdown-item text-center text-danger" onClick={Exit}>خروج</a></li>
+                      </ul>
+                    </div>
                   }
                 </div>
               </div>      
@@ -99,4 +124,4 @@ const navbar = () => {
     )
 }
 
-export default navbar;
+export default Navbar;

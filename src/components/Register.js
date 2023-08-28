@@ -56,7 +56,9 @@ function Register() {
             //const respose = await axios.post("link/", result);
             // const token = respose.data.token;
             const token = 'sina1111'
+            const userType = 'siteUser'
             localStorage.setItem('token',token);
+            localStorage.setItem('userType',userType);
             navigate('/dashbord');
 
         }catch(error){

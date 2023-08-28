@@ -14,11 +14,11 @@ import { mobileModeData, pcModeData } from "../data/staticPictures";
 const DashBord = () => {
 
   const [data, setData] = useState([])
+
   const location = useLocation()
   if(localStorage.getItem('userType') === 'googleUser'){
     const profile = location.state.profile
   }
-  
 
   useEffect(() => {
     axios.get('https://jsonplaceholder.typicode.com/posts')

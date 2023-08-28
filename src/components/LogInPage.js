@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
 import { useNavigate , Link } from "react-router-dom";
-// import { useGoogleLogin } from '@react-oauth/google';
-import { GoogleLogin } from "@react-oauth/google";
 import * as yup from 'yup'
 import axios from "axios";
 
@@ -13,33 +11,6 @@ function LogInPage (props) {
     const [userName, setUsername] = useState('');
     const [password, setPassword] = useState('')
     const [errors, setErrors] = useState([]);
-
-    // const [ user, setUser ] = useState([]);
-
-    // useEffect(
-    //     () => {
-    //         if (user) {
-    //             axios
-    //                 .get(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`, {
-    //                     headers: {
-    //                         Authorization: `Bearer ${user.access_token}`,
-    //                         Accept: 'application/json'
-    //                     }
-    //                 })
-    //                 .then((res) => {
-    //                     googleEnter(res.data)
-    //                 })
-    //                 .catch((err) => console.log(err));
-    //         }
-    //     },
-    //     [ user ]
-    // );
-
-
-    // const login = useGoogleLogin({
-    //     onSuccess: (codeResponse) => setUser(codeResponse),
-    //     onError: (error) => console.log('Login Failed:', error)
-    // });
 
     const userSchema = yup.object().shape({
         userName: yup.string().required('نام کابری خود را وارد کنید'),
@@ -88,17 +59,6 @@ function LogInPage (props) {
         localStorage.setItem('userType',userType);
         navigate('/dashbord');
     }
-
-    // const googleEnter = ( data ) => {
-
-    //     const token = user.access_token
-    //     const userType = 'googleUser'
-    //     localStorage.setItem('token',token);
-    //     localStorage.setItem('userType',userType);
-    //     navigate('/dashbord', {state:{profile:data}});
-    // }
-
-
 
     return(
         <div className="container text-center position-absolute top-50 start-50 translate-middle" style={{backgroundColor:"#F8F9FA"}}>
