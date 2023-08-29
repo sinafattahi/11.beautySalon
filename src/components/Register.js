@@ -55,11 +55,19 @@ function Register() {
         try{
             //const respose = await axios.post("link/", result);
             // const token = respose.data.token;
+            // const profile = response.data.profile;
+            const profile = {
+                name: 'سینا',
+                familyName: 'فتاحی اردکانی',
+                email: 's.fatahi79@gmail.com',
+                phone: '09103340482'
+            }
             const token = 'sina1111'
             const userType = 'siteUser'
             localStorage.setItem('token',token);
             localStorage.setItem('userType',userType);
-            navigate('/dashbord');
+            
+            navigate('/dashbord',{state:{profile:profile}});
 
         }catch(error){
             //setErrors('نام کاربری توسط کاربر دیگری استفاده شده است')

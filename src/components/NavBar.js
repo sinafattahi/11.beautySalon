@@ -1,11 +1,15 @@
 import { Link, useNavigate } from "react-router-dom";
-import {linesInfo} from '../data/linesInfo';
-import {GoogleLogOut} from './GoogleAuth'
+import { linesInfo } from '../data/linesInfo';
+import { GoogleLogOut } from './GoogleAuth'
 
 
-const Navbar = () => {
+const Navbar = (props) => {
 
   const navigate = useNavigate();
+
+  const accountHandler = () => {
+    navigate('/userAccount',{state:{profile:props.profile}});
+  }
 
   const Exit = () => {
     if(localStorage.getItem('userType') === 'googleUser'){
@@ -61,7 +65,7 @@ const Navbar = () => {
                         <i className="fa fa-user fa-xs" ></i>
                       </button>
                       <ul className="dropdown-menu">
-                        <li><a className="dropdown-item text-center" href="/userAccount">مشاهده حساب کاربری</a></li>
+                        <li><a className="dropdown-item text-center" onClick={accountHandler}>مشاهده حساب کاربری</a></li>
                         <li><a className="dropdown-item text-center" href="#"></a></li>
                         <li><a className="dropdown-item text-center text-danger" onClick={Exit}>خروج</a></li>
                       </ul>
@@ -111,10 +115,10 @@ const Navbar = () => {
                   </ul>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="/dashbord">افتخارات مجموعه</a>
+                  <a className="nav-link active" aria-current="page" href="#">افتخارات مجموعه</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="/dashbord">ارتباط با ما</a>
+                  <a className="nav-link active" aria-current="page" href="#">ارتباط با ما</a>
                 </li>
               </ul>
             </div>

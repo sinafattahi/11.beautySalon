@@ -14,13 +14,18 @@ import { mobileModeData, pcModeData } from "../data/staticPictures";
 const DashBord = () => {
 
   const [data, setData] = useState([])
+  const [profile, setProfile] = useState([])
 
   const location = useLocation()
-  if(localStorage.getItem('userType') === 'googleUser'){
-    const profile = location.state.profile
-  }
 
+  
+  
   useEffect(() => {
+    
+    if(location.state !== null ){
+      setProfile(location.state.profile)
+    }
+
     axios.get('https://jsonplaceholder.typicode.com/posts')
     .then(
       (result) => {
@@ -51,7 +56,7 @@ const DashBord = () => {
 
     return(
       <div>
-        <Navbar />
+        <Navbar profile={profile} />
         <Modal data={data}/>
         <br/>
         <br/>
