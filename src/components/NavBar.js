@@ -8,7 +8,7 @@ const Navbar = (props) => {
   const navigate = useNavigate();
 
   const accountHandler = () => {
-    navigate('/userAccount',{state:{profile:props.profile}});
+    navigate('/userAccount',{state:{profile:props.profile,modalData:props.data}});
   }
 
   const Exit = () => {
@@ -51,20 +51,27 @@ const Navbar = (props) => {
               </div>
               <div className="my-auto d-flex flex-row">
                 <div className="my-auto">
-                  <button type="button" className="btn btn-secondary ms-2 py-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i className="fa fa-search fa-xs py-0" ></i></button>
+                  <button type="button" className="btn btn-light ms-2 py-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i className="fa fa-search fa-xs py-0" ></i></button>
                   
                   {
                     localStorage.getItem('userType') === 'guestUser' ?
                     <>
                       <Link to= "/logIn" className="btn my-auto ms-2 px-0 py-0" about="logIn"><h6 className="mb-0" style={{fontSize:"10px"}}>ورود</h6></Link>
-                      <Link to="/register" className="btn btn-secondary ms-1 px-2 py-2" about="register"><h6 className="mb-0" style={{fontSize:"10px"}}>ثبت نام</h6></Link>
+                      <Link to="/register" className="btn btn-light ms-1 px-2 py-2" about="register"><h6 className="mb-0" style={{fontSize:"10px"}}>ثبت نام</h6></Link>
                     </>
                     :
                     <div className="btn-group" title="حساب کاربری">
-                      <button className="btn btn-secondary ms-2 py-1 rounded" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i className="fa fa-user fa-xs" ></i>
-                      </button>
+                    
+                      {
+                        props.profile.picture === undefined ? <button className="btn btn-light ms-2 py-1 rounded" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        
+                          <i className="fa fa-user fa-xs" ></i>
+
+                        </button> : <img data-bs-toggle="dropdown" aria-expanded="false" className="ms-2 rounded-circle" style={{width:"30px",height:"30px"}} src={`${props.profile.picture}`} />
+                      }
+                      
                       <ul className="dropdown-menu">
+                        <li><a className="dropdown-item text-center">{props.profile.name} {props.profile.familyName}</a></li> 
                         <li><a className="dropdown-item text-center" onClick={accountHandler}>مشاهده حساب کاربری</a></li>
                         <li><a className="dropdown-item text-center" href="#"></a></li>
                         <li><a className="dropdown-item text-center text-danger" onClick={Exit}>خروج</a></li>

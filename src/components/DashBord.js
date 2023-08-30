@@ -56,12 +56,12 @@ const DashBord = () => {
 
     return(
       <div>
-        <Navbar profile={profile} />
+        <Navbar data={data} profile={profile} />
         <Modal data={data}/>
         <br/>
         <br/>
         
-        <br className="d-none d-lg-block d-xl-block"></br>
+        <br className="d-none d-lg-block d-xl-block"/>
 
         <Carousel 
           mode= 'mobile'
