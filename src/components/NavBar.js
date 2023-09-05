@@ -27,9 +27,9 @@ const Navbar = (props) => {
   const lineInfo = linesInfo;
   
     return(
-      <div className="fixed-top">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light w-100" style={{width: "100%"}}> 
-          <div style={{width: "100%"}}>
+      <div className="fixed-top webModePad bg-light">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light"> 
+          <div className="w-100">
             <div className="container-fluid px-0 d-flex justify-content-between">
               <div className="d-flex ">
                 <div>
@@ -71,7 +71,7 @@ const Navbar = (props) => {
                       }
                       
                       <ul className="dropdown-menu">
-                        <li><a className="dropdown-item text-center">{props.profile.name} {props.profile.familyName}</a></li> 
+                        <li><a className="dropdown-item text-center" style={{fontSize:"12px"}}>{props.profile.name} {props.profile.familyName}</a></li> 
                         <li><a className="dropdown-item text-center" onClick={accountHandler}>مشاهده حساب کاربری</a></li>
                         <li><a className="dropdown-item text-center" href="#"></a></li>
                         <li><a className="dropdown-item text-center text-danger" onClick={Exit}>خروج</a></li>

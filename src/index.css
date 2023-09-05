@@ -28,19 +28,28 @@
 @media (max-width: 356px) {
   .under-356 {
     display: none;
-  }
+	}
 }
 
 
 .lines {
 	height: 200px;
 }
+
 @media (max-width: 767px) {
 	.lines {
 		height: 150px;
 	}
   }
 
+
+@media (min-width: 800px) {
+	.webModePad{
+		padding-top: 5px;
+		padding-left: 15%;
+		padding-right: 15%;
+	}
+}
   
 
 .wrapper

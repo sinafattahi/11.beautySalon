@@ -44,7 +44,8 @@ function LogInPage (props) {
                 name: 'سینا',
                 familyName: 'فتاحی اردکانی',
                 email: 's.fatahi79@gmail.com',
-                phone: '09103340482'
+                phone: '09103340482',
+                picture: './../media/img/sina.jpg'
             }
             const token = 'sina1111'
             const userType = 'siteUser'

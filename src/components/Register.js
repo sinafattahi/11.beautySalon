@@ -53,14 +53,15 @@ function Register() {
         const result = await validate();
 
         try{
-            //const respose = await axios.post("link/", result);
+            // const respose = await axios.post("link/", result);
             // const token = respose.data.token;
             // const profile = response.data.profile;
             const profile = {
                 name: 'سینا',
                 familyName: 'فتاحی اردکانی',
                 email: 's.fatahi79@gmail.com',
-                phone: '09103340482'
+                phone: '09103340482',
+                picture: './../media/img/sina.jpg'
             }
             const token = 'sina1111'
             const userType = 'siteUser'
